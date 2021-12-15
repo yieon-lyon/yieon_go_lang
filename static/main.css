@@ -1,18 +1,50 @@
+body {
+    height: 100%;
+    width: 100%;
+}
 .main {
     background: lightskyblue;
     color: white;
-    padding-bottom: 80px; }
+    height: 100%;
+    width: 100%;
+    padding-bottom: 80px;
+}
+.main .container {
+    padding-top: 50px;
+}
+
+.main .container .container-test {
+    padding: 10px;
+}
+
+.main .container .container-test .container-test-title {
+    font-size: 18px;
+}
+
+.main .container .container-test .container-test-items {
+    padding-top: 4px;
+}
+.main .container .container-test .container-test-items .container-test-key {
+    font-size: 14px;
+}
+.main .container .container-test .container-test-items .container-test-value {
+    font-size: 15px;
+}
 .main .btn-primary {
     background: dodgerblue;
-    border-color: dodgerblue; }
+    border-color: dodgerblue;
+}
 .main .btn-primary:hover {
-    background: royalblue; }
+    background: royalblue;
+}
 .main p {
     color: #d9ccee;
     max-width: 75%;
-    margin: 1em auto 2em; }
+    margin: 1em auto 2em;
+}
 .navbar + .main {
-    margin-top: -20px; }
+    margin-top: -20px;
+}
 .main .lang-logo {
     display: block;
     background: #B01302;
@@ -21,6 +53,8 @@
     width: 100px;
     height: 100px;
     margin: auto;
-    border: 2px solid white; }
+    border: 2px solid white;
+}
 .main .lang-logo img {
-    max-width: 100%; }
+    max-width: 100%;
+}

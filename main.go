@@ -11,7 +11,8 @@ func main() {
 	port := os.Getenv("PORT")
 
 	if port == "" {
-		log.Fatal("$PORT must be set")
+		port = "8888"
+		log.Print("$PORT must be set")
 	}
 
 	router := gin.New()
@@ -24,9 +25,18 @@ func main() {
 	})
 
 	router.GET("/chapter-1", func(c *gin.Context) {
-		c.HTML(http.StatusOK, "test.tmpl.html", gin.H{
-			"value": "밸류 테스트입니다!",
-			"length": []int{1, 2, 3},
+		values := []obj{{Key: "x+y?",Value: "xy"}, {Key: "b-a",Value: "zzz"}}
+		c.HTML(http.StatusOK, "basic-learn.tmpl.html", gin.H{
+			"chapter": "정수",
+			"obj": values,
+		})
+	})
+
+	router.GET("/chapter-2", func(c *gin.Context) {
+		values := []obj{{Key: "",Value: ""}}
+		c.HTML(http.StatusOK, "basic-learn.tmpl.html", gin.H{
+			"chapter": "반복",
+			"obj": values,
 		})
 	})
 
