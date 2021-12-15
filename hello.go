@@ -11,6 +11,10 @@ func helloHandler(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "hello")
 }
 
+func helloHandler2(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "what?")
+}
+
 func main() {
 	port := os.Getenv("PORT")
 	if port == "" {
@@ -20,6 +24,9 @@ func main() {
 	}
 
 	if err := http.ListenAndServe(":"+port, http.HandlerFunc(helloHandler)); err != nil {
+		log.Fatal(err)
+	}
+	if err := http.ListenAndServe(":"+port, http.HandlerFunc(helloHandler2)); err != nil {
 		log.Fatal(err)
 	}
 }
