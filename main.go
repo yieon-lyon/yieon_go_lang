@@ -26,6 +26,7 @@ func main() {
 	router.GET("/chapter-1", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "test.tmpl.html", gin.H{
 			"value": "밸류 테스트입니다!",
+			"length": []int{1, 2, 3},
 		})
 	})
 
