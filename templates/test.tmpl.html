@@ -5,10 +5,9 @@
 
 <div class="main text-center">
     <div class="container">
-        {{$value := .value}}
-        {{range $item .length }}
+        {{range .length }}
             <div class="">
-                <span>Chapter {{$item}}</span>
+                <span>Chapter {{.}}</span>
                 <div>
                     <span>result?</span>
                     <span>{{.value}}</span>
