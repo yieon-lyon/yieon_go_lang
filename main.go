@@ -25,7 +25,10 @@ func main() {
 	})
 
 	router.GET("/chapter-1", func(c *gin.Context) {
-		values := []obj{{Key: "x+y?",Value: "xy"}, {Key: "b-a",Value: "zzz"}}
+		sum := Add(2, 2)
+		expected := 4
+
+		values := []obj{{Key: "sum?",Value: sum}, {Key: "expected?",Value: expected}}
 		c.HTML(http.StatusOK, "basic-learn.tmpl.html", gin.H{
 			"chapter": "정수",
 			"obj": values,
