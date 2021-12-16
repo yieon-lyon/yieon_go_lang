@@ -15,22 +15,24 @@ func main() {
 		log.Print("$PORT must be set")
 	}
 
-	router := gin.New()
-	router.Use(gin.Logger())
-	router.LoadHTMLGlob("templates/*.tmpl.html")
-	router.Static("/static", "static")
+	router := gin.New() // gin 생성
+	router.Use(gin.Logger()) // log 사용
+	router.LoadHTMLGlob("templates/*.tmpl.html") // 읽어들일 html 지정
+	router.Static("/static", "static") // 스타일 지정
 
+	// 기본 localhost:8888 로 접속했을 때 동작하는 코드
 	router.GET("/", func(c *gin.Context) {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
 	router.GET("/chapter-1", func(c *gin.Context) {
-		sum := Add(2, 2)
+		sum := Add(1, 3)
 		expected := 4
 
-		values := []obj{{Key: "sum?",Value: sum}, {Key: "expected?",Value: expected}}
+		values := []obj{{Key: "sum?",Value: sum}, {Key: "expected?",Value: expected}, {Key: "test",Value: "123"}}
+
 		c.HTML(http.StatusOK, "basic-learn.tmpl.html", gin.H{
-			"chapter": "정수",
+			"chapter": "정수 1111",
 			"obj": values,
 		})
 	})
