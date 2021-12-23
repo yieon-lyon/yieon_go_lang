@@ -28,9 +28,7 @@ func main() {
 	router.GET("/chapter-1", func(c *gin.Context) {
 		sum := Add(1, 3)
 		expected := 4
-
 		values := []obj{{Key: "sum?",Value: sum}, {Key: "expected?",Value: expected}, {Key: "test",Value: "123"}}
-
 		c.HTML(http.StatusOK, "basic-learn.tmpl.html", gin.H{
 			"chapter": "정수 1111",
 			"obj": values,
@@ -38,9 +36,17 @@ func main() {
 	})
 
 	router.GET("/chapter-2", func(c *gin.Context) {
-		values := []obj{{Key: "",Value: ""}}
+		values := []obj{{Key: "반복문 예제 실습하기 : ",Value: Repeat("가나다라")}}
 		c.HTML(http.StatusOK, "basic-learn.tmpl.html", gin.H{
 			"chapter": "반복",
+			"obj": values,
+		})
+	})
+
+	router.GET("/chapter-3", func(c *gin.Context) {
+		values := []obj{{Key: "배열과 슬라이스 예제 실습하기 1번 : ",Value: Sum([5]int{1, 2, 3, 4, 5})}}
+		c.HTML(http.StatusOK, "basic-learn.tmpl.html", gin.H{
+			"chapter": "배열과 슬라이스",
 			"obj": values,
 		})
 	})
