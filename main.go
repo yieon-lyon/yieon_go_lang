@@ -44,7 +44,12 @@ func main() {
 	})
 
 	router.GET("/chapter-3", func(c *gin.Context) {
-		values := []obj{{Key: "배열과 슬라이스 예제 실습하기 1번 : ",Value: Sum([5]int{1, 2, 3, 4, 5})}}
+		values := []obj{
+			{Key: "배열과 슬라이스 예제 실습하기 1번 : ",Value: Sum([]int{1, 2, 3, 4, 5})},
+			{Key: "배열과 슬라이스 예제 실습하기 3번 : ",Value: SumAll([]int{1, 2}, []int{0, 9})},
+			{Key: "배열과 슬라이스 예제 실습하기 4-5 - 1번 : ",Value: SumAllTails([]int{1, 2}, []int{0, 9})},
+			{Key: "배열과 슬라이스 예제 실습하기 4-5 - 2번 : ",Value: SumAllTails([]int{}, []int{3, 4, 5})},
+		}
 		c.HTML(http.StatusOK, "basic-learn.tmpl.html", gin.H{
 			"chapter": "배열과 슬라이스",
 			"obj": values,
