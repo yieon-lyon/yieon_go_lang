@@ -25,11 +25,17 @@ func main() {
 		c.HTML(http.StatusOK, "index.tmpl.html", nil)
 	})
 
+	// 페이지 내 chapter-1로 라우팅 되는 코드
 	router.GET("/chapter-1", func(c *gin.Context) {
+		// basic-func.go의 Add 함수
 		sum := Add(1, 3)
 		expected := 4
+		// interface.go의 obj 인터페이스
+		// Key에 들어갈 값과 Value에 들어갈 값을 설정
 		values := []obj{{Key: "sum?",Value: sum}, {Key: "expected?",Value: expected}, {Key: "test",Value: "123"}}
+		// 호출할 html 설정과 변수 입력
 		c.HTML(http.StatusOK, "basic-learn.tmpl.html", gin.H{
+			// html 코드 내에서 사용할 변수 할당
 			"chapter": "정수 1111",
 			"obj": values,
 		})
@@ -55,6 +61,12 @@ func main() {
 			"obj": values,
 		})
 	})
+
+	/* TODO /chapter-4에 들어갈 항목을 정리한다.
+		1. 라우터 생성
+		2. 연결할 HTML 설정
+		3. html 내에서 사용할 변수 설정
+	*/
 
 	router.Run(":" + port)
 }
