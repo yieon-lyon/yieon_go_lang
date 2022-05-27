@@ -1,12 +1,13 @@
 package main
 
+// Add 함수
 // 정수
 func Add(x, y int) int {
 	return x + y
 }
 
-// 반복
 // Repeat 함수
+// 반복
 // character string -> 함수가 입력받을 타입과 변수명 지정
 // func ... ) string -> 함수가 리턴할 타입 지정
 func Repeat(character string) string {
@@ -28,8 +29,8 @@ func Repeat(character string) string {
 	return repeated
 }
 
-// 배열과 슬라이스
 // Sum 함수
+// 배열과 슬라이스
 func Sum(numbers []int) int {
 	// sum 변수 할당 = 0
 	sum := 0
