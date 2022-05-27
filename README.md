@@ -1,4 +1,6 @@
 # yieon의 Golang Study
+## 7주차까지 진행 후 스터디 원들의 미참여 의사로 스터디 종료
+> 비개발자와 함께한 스터디로, 추후 스터디가 아닌 성능 최적화 서비스로 개인 프로젝트 진행 의사 있음
 
 ###[Heroku](https://devcenter.heroku.com/articles/getting-started-with-go#set-up)
 
